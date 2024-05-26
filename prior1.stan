@@ -11,8 +11,8 @@ parameters {
 
 model {
     // Priors for the parameters
-    alpha ~ normal(0, 50);
-    beta ~ normal(0, 20);
+    alpha ~ normal(0, 10);
+    beta ~ normal(0, 1);
     
     // Likelihood for the logistic regression
     heart_disease ~ bernoulli_logit(alpha + beta * age);
