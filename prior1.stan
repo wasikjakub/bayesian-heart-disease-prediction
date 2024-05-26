@@ -25,4 +25,3 @@ generated quantities {
         heart_disease_prob[n] = inv_logit(alpha + beta * age[n]);
     }
 }
-
