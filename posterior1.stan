@@ -2,7 +2,7 @@ data {
     int<lower=0> N;  // number of observations
     int<lower=0> K;  // number of predictors
     matrix[N, K] X;  // predictor matrix
-    int<lower=0, upper=1> y[N];  // binary outcome
+    array[N] int<lower=0, upper=1> y;  // binary outcome
 }
 parameters {
     vector[K] beta;  // coefficients for predictors
