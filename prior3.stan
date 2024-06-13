@@ -1,21 +1,12 @@
-data {
-    int<lower=0> N;  // Number of samples
-    vector[N] thalach;  // Resting blood pressure of individuals
-    array[N] int<lower=0, upper=1> heart_disease; // Heart disease indicator (0 or 1)
-}
-
 parameters {
     real alpha;      // Intercept
     real beta;  // Slope for blood pressure, constrained to be non-negative
+    real<lower=70, upper=190> thalach;
 }
 
 model {
-    // Priors for the parameters
-    alpha ~ normal(0, 10);
-    beta ~ normal(0, 1);  // Positive prior for beta to ensure higher BP leads to higher probability
-    
-    // Likelihood for the logistic regression
-    heart_disease ~ bernoulli_logit(alpha + beta * thalach);
+    alpha ~ normal(-1, 0.2);
+    beta ~ normal(1.6, 0.2);
 }
 
 generated quantities {
