@@ -1,27 +1,27 @@
 generated quantities {
     // First set of priors
     real alpha1 = normal_rng(-6.5, 0.04);
-    real beta1 = normal_rng(0.1, 0.001);
+    real beta1 = normal_rng(0.1, 0.01);
     real<lower=30, upper=90> age = normal_rng(60, 15);
 
     // Second set of priors
     real alpha2 = normal_rng(-15.5, 0.1);
-    real beta2 = normal_rng(0.1, 0.001);
+    real beta2 = normal_rng(0.1, 0.01);
     real<lower=94, upper=200> bps = normal_rng(140, 30);
 
     // Third set of priors
-    real alpha3 = normal_rng(-20, 0.1);
-    real beta3 = normal_rng(0.12, 0.001);
+    real alpha3 = normal_rng(-17, 0.1);
+    real beta3 = normal_rng(0.12, 0.01);
     real<lower=70, upper=190> thalach = normal_rng(130, 30);
 
     // Forth set of priors
-    real alpha4 = normal_rng(-23, 1);
-    real beta4 = normal_rng(0.06, 0.001);
+    real alpha4 = normal_rng(-23, 6);
+    real beta4 = normal_rng(0.06, 0.01);
     real<lower=130, upper=560> chol = normal_rng(300, 100);
 
     // Fifth set of priors
-    real alpha5 = normal_rng(-2, 0.01);
-    real beta5 = normal_rng(0.5, 0.1);
+    real alpha5 = normal_rng(-1, 0.1);
+    real beta5 = normal_rng(0.35, 0.1);
     real<lower=0, upper=6> old_peak = normal_rng(2, 1);
 
     // Combined probability using a logistic regression model
