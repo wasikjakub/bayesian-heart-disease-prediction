@@ -4,7 +4,7 @@ data {
     array[N] int<lower=0> bps;
     array[N] int<lower=0> thalach;
 }
-
+// model
 generated quantities {
     // First set of priors
     real alpha1 = normal_rng(-6.5, 0.04);
