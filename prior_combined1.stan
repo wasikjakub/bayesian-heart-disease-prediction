@@ -1,6 +1,6 @@
 generated quantities {
     // First set of priors
-    real alpha = normal_rng(-2, 0.5);
+    real alpha = normal_rng(-2, 0.75);
     real beta1 = normal_rng(0.0083, 0.00332);
     real age = normal_rng(60, 20);
 
