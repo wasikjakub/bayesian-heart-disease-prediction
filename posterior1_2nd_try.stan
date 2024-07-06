@@ -23,9 +23,9 @@ transformed parameters {
 model {
     // Define priors
     alpha ~ normal(-1.75, 0.75);
-    beta1 ~ normal(0.0083, 0.00332);
-    beta2 ~ normal(0.00357, 0.001428);
-    beta3 ~ normal(0.00385, 0.00154);
+    beta1 ~ normal(0.0083, 0.0332);
+    beta2 ~ normal(0.0038, 0.01428);
+    beta3 ~ normal(0.0033, 0.0154);
 
     // Likelihood
     y ~ bernoulli_logit(combined_linear_predictor);
