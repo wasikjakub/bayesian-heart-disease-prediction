@@ -1,20 +1,20 @@
 data {
-    int<lower=1> N;          // number of observations
+    int<lower=1> N;       
     array[N] int<lower=0> age;
     array[N] int<lower=0> trestbps;
     array[N] int<lower=0> thalach;
     array[N] int<lower=0> chol;
     array[N] real<lower=0> oldpeak;      
-    array[N] int<lower=0, upper=1> y; // binary outcome (heart disease presence)
+    array[N] int<lower=0, upper=1> y; 
 }
 
 parameters {
-    real alpha;              // intercept
-    real beta1;              // coefficient for age
-    real beta2;              // coefficient for resting blood pressure
-    real beta3;              // coefficient for maximum heart rate
-    real beta4;              // coefficient for cholesterol level
-    real beta5;              // coefficient for oldpeak
+    real alpha;             
+    real beta1;             
+    real beta2;             
+    real beta3;            
+    real beta4;            
+    real beta5;             
 }
 
 transformed parameters {
@@ -25,7 +25,6 @@ transformed parameters {
 }
 
 model {
-    // Priors
     alpha ~ normal(-4, 1);
     beta1 ~ normal(0.0083, 0.0332);
     beta2 ~ normal(0.00385, 0.0154);
@@ -33,7 +32,6 @@ model {
     beta4 ~ normal(0.00167, 0.0668);
     beta5 ~ normal(0.25, 0.1);
 
-    // Logistic regression likelihood
     y ~ bernoulli_logit(combined_linear_predictor);
 }
 
