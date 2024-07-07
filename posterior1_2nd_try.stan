@@ -3,7 +3,7 @@ data {
     array[N] int<lower=0> age;
     array[N] int<lower=0> bps;
     array[N] int<lower=0> thalach;
-    array[N] int y;
+    array[N] int<lower=0, upper=1> y;
 }
 
 parameters {
